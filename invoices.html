@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TitleTown Oil | Welcome</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader"> <span><img src="images/prloader.gif"></span></div>
+    <header>
+        <div class="container">
+            <div class="header_part">
+                <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+                <div class="rmm-button">
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <a href="#">become a dealer</a>
+                        </li>
+                        <li>
+                            <a href="#">about us</a>
+                        </li>
+                        <li>
+                            <a href="#">careers</a>
+                        </li>
+                        <li>
+                            <a href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a class="login_btn" href="#" data-toggle="modal" data-target="#myModallogin"><i class="fa fa-sign-in" aria-hidden="true"></i>login</a>
+        </div>
+    </header>
+    <section class="enroll">
+        <div class="container">
+            <h2>Invoices</h2>
+            <div class="invoice">
+                <h4>Pay Selected ($198.00)</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th><img src="images/checked.png"></th>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Amount Due</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>54312</td>
+                            <td>11/31/2017</td>
+                            <td>Invoice 1</td>
+                            <td>$99.00</td>
+                            <td>$99.00</td>
+                            <td><a href="#" data-toggle="modal" data-target="#invoice_view">pay now</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>12831</td>
+                            <td>11/31/2017</td>
+                            <td>Invoice 2</td>
+                            <td>$99.00</td>
+                            <td>$99.00</td>
+                            <td><a href="#" data-toggle="modal" data-target="#invoice_view">pay now</a></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>12353</td>
+                            <td>11/31/2017</td>
+                            <td>Invoice 3</td>
+                            <td>$99.00</td>
+                            <td>$00.00</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>12345</td>
+                            <td>11/31/2017</td>
+                            <td>Invoice 4</td>
+                            <td>$99.00</td>
+                            <td>$00.00</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="logo_div">
+                <a href="#" class="foot-logo"><img src="images/logo.png"></a>
+            </div>
+            <ul>
+                <li>1275 Glory Road</li>
+                <li>Green Bay, WI 54304</li>
+                <li><a href="tel:+19203368983">920.336.8983</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        // grab the initial top offset of the navigation 
+        var stickyNavTop = $('body').offset().top;
+        // our function that decides weather the navigation bar should have "fixed" css position or not.
+        var stickyNav = function() {
+            var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+            // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+            // otherwise change it back to relative
+            if (scrollTop > 10) {
+                $('header').addClass('sticky');
+            } else {
+                $('header').removeClass('sticky');
+            }
+
+        };
+
+        stickyNav();
+        // and run it again every time you scroll
+        $(window).scroll(function() {
+            stickyNav();
+        });
+
+    </script>
+    <script>
+        jQuery(function($) {
+
+            //Preloader
+            var preloader = $('.preloader');
+            $(window).load(function() {
+                preloader.remove();
+            });
+        });
+
+    </script>
+    <script>
+        jQuery('.rmm-button').click(function() {
+            jQuery('.nav').toggleClass('text');
+            jQuery('.rmm-button').toggleClass('bt-xlose');
+        });
+
+    </script>
+    <!-----------------------------------Login Modal--------------------------------------------->
+    <!-- Modal -->
+    <div id="myModallogin" class="modal fade form_popup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h2>Login</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="result"></div>
+                    <form role="form" id="user_login" action="" method="post">
+                        <div class="form-area">
+                            <div class="form-group">
+                                <!--<label for="username">Username</label>-->
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <!---<label for="user_pass">Password</label>--->
+                                <input type="password" class="form-control" name="" placeholder="Password">
+                            </div>
+
+                            <input type="hidden" name="" value="" /><input type="hidden" name="" value="" /> <button type="submit" class="btn btn-primary popup_btn" name="submit">Log In</button>
+                        </div>
+                    </form>
+                    <div class="btm_prt">
+                        <a class="frgt" href="#">Forget Password</a>
+                        <a href="javascript:void(0)" class="btn-primary login_c_class" data-toggle="modal" data-target="#myModalRegister">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------Login Modal--------------------------------------------->
+
+    <!-----------------------------------Register Modal--------------------------------------------->
+    <div id="myModalRegister" class="modal fade form_popup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h2>register a new account</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="result1"></div>
+                    <form role="form" id="wpjobus-register" name="wpjobus-register" action="" method="post">
+                        <div class="form-area">
+                            <div class="form-group">
+                                <!--<label for="exampleInputFirstname">First Name</label>-->
+                                <input type="text" class="form-control" name="userFname" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputLastName">Username</label>-->
+                                <input type="text" class="form-control" name="userName" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">Password</label>--->
+                                <input type="password" class="form-control" name="userPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword2">Repeat Password</label>--->
+                                <input type="password" class="form-control" name="userConfirmPassword" placeholder="Retype Password">
+                            </div>
+                            <input type="hidden" name="" value="" /><input type="hidden" name="_wp_http_referer" value="/dev/" /> <button type="submit" name="submit" class="btn btn-primary popup_btn">join now</button>
+                        </div>
+                    </form>
+                    <p>
+                        Already have an account?
+                        <a href="javascript:void(0)" class="btn-primary login_c_register" data-toggle="modal" data-target="#myModallogin">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------Payinvoice Modal--------------------------------------------->
+    <div id="payinvoice" class="modal fade form_popup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h2>Pay Invoice</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="invoice">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Name <img class="sorting" src="images/sorting.png"></th>
+                                    <th>Amount <img class="sorting" src="images/sorting.png"></th>
+                                    <th>Amount Due <img class="sorting" src="images/sorting.png"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>54312</td>
+                                    <td>11/31/2017</td>
+                                    <td>Invoice 1</td>
+                                    <td>$99.00</td>
+                                    <td>$99.00</td>
+                                </tr>
+                                <tr>
+                                    <td>12831</td>
+                                    <td>11/31/2017</td>
+                                    <td>Invoice 2</td>
+                                    <td>$99.00</td>
+                                    <td>$99.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="add_select_method">
+                            <select>
+                            <option>Card: Visa ending in 4765</option>
+                            <option>Card: Visa ending in 5340</option>
+                        </select>
+                            <p>Or <a href="#">Add New Payment Method</a></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary popup_btn pay_btn" name="submit">Pay Invoices ( $198.00 )</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------invoice view Modal--------------------------------------------->
+    <div id="invoice_view" class="modal fade form_popup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <a href="#" class="logo_area"><img src="images/logo.png"></a>
+                    <div class="adrs_dtls">
+                        <p>Dummy Lorem 167c 10435 Lrome, USA</p>
+                        <p><a href="#">( 123 ) 456 - 7890 </a><span class="mob"><img src="images/mob_icon.svg"></span></p>
+                        <p><a href="#">info@titletown.com</a> <span><img src="images/envelope.svg"></span></p>
+                        <p><a href="#">www.titletown.com</a> <span><img src="images/planet-sphere.svg"></span></p>
+                    </div>
+                </div>
+                <div class="invoice_div">
+                    <div class="lft_invoice">
+                        <h3>Invoice to Global tech ltd</h3>
+                        <p>Dummy Lorem 167c 10435 Lrome, USA</p>
+                        <p><span class="mob"><img src="images/mob_icon.svg"></span><a href="tel:1234567890">( 123 ) 456 - 7890</a></p>
+                        <p><span><img src="images/envelope.svg"></span><a href="mailto:info@titletown.com">info@titletown.com</a></p>
+                    </div>
+                    <div class="rght_invoice">
+                        <h1>Invoice</h1>
+                        <ul>
+                            <li>
+                                <h5>Total Due</h5>
+                                <span>$2500</span>
+                            </li>
+                            <li>
+                                <h5>Date</h5>
+                                <span>10/June/2017</span>
+                            </li>
+                            <li>
+                                <h5>Invoice:</h5>
+                                <span>#12345</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="invoice">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Date</th>
+                                    <th>Name <img class="sorting" src="images/sorting.png"></th>
+                                    <th>Amount <img class="sorting" src="images/sorting.png"></th>
+                                    <th>Amount Due <img class="sorting" src="images/sorting.png"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>54312</td>
+                                    <td>11/31/2017</td>
+                                    <td>Invoice 1</td>
+                                    <td>$99.00</td>
+                                    <td>$99.00</td>
+                                </tr>
+                                <tr>
+                                    <td>12831</td>
+                                    <td>11/31/2017</td>
+                                    <td>Invoice 2</td>
+                                    <td>$99.00</td>
+                                    <td>$99.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pymnt_btm_div">
+                            <div class="pymnt_method">
+                                <h3>Pay methods</h3>
+                                <h6><span>Paypal:</span> Lorem ipsum dolor sit amet, consectetur</h6>
+                                <h6><span>Payments:</span> Lorem ipsum dolor sit amet, consectetur</h6>
+                                <div class="thnk_bsns">
+                                    <h3>Thank you for your business!</h3>
+                                    <p><strong>Terms & Conditions</strong></p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse purus</p>
+                                </div>
+                            </div>
+                            <div class="sub_ttl">
+                                <ul>
+                                    <li>
+                                        <span>Sub Total</span>
+                                        <span>$198.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Tax Vat 1.8%</span>
+                                        <span>$150.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Discount 1.5%</span>
+                                        <span>- 48.00</span>
+                                    </li>
+                                    <li>
+                                        <span>Sub Total</span>
+                                        <span>$198.00</span>
+                                    </li>
+                                </ul>
+                                <div class="signature_div">
+                                    <img src="images/sign_img.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

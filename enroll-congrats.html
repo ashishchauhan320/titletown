@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TitleTown Oil | Welcome</title>
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Style -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader"> <span><img src="images/prloader.gif"></span></div>
+    <header>
+        <div class="container">
+            <div class="header_part">
+                <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+                <div class="rmm-button">
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li>
+                            <a href="#">become a dealer</a>
+                        </li>
+                        <li>
+                            <a href="#">about us</a>
+                        </li>
+                        <li>
+                            <a href="#">careers</a>
+                        </li>
+                        <li>
+                            <a href="#">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="loggedin">
+                <a href="#" class="cart_view">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+                <div class="user_view"><span class="user_icon"><img src="images/user_img.png"></span><span class="caret1"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    <ul class="view_links">
+                        <li>
+                            <a href="#">Order Scrip</a>
+                        </li>
+                        <li>
+                            <a href="#">Company Info</a>
+                        </li>
+                        <li>
+                            <a href="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">View Invoices</a>
+                        </li>
+                        <li>
+                            <a href="#">Payment Methods</a>
+                        </li>
+                        <li>
+                            <a href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="enrolled_program">
+        <div class="container">
+            <h2>Congratulations! You've Been Enroll in Our Scrip Program</h2>
+            <p>We are in the process of verifying your enrollment status. You can create an order for scrip cards. Should your enrollment be denied, we will refund your order for the full amount.</p>
+            <div class="scrip_box">
+                <h3>Now that you are enrolled, you can any of the following.</h3>
+                <div class="enroll_list">
+                    <div class="info_list">Create an order for scrip cards</div>
+                    <a class="red_btn" href="#">Order</a>
+                </div>
+                <div class="enroll_list">
+                    <div class="info_list">If your organizaton has multiple people that can, create order or manage your accout, you can add them now</div>
+                    <a class="red_btn" href="#">Add People</a>
+                </div>
+                <div class="enroll_list">
+                    <div class="info_list">Your invoice are stored here if your ever need then.</div>
+                    <a class="red_btn" href="#">View/Print Invoices</a>
+                </div>
+                <div class="enroll_list">
+                    <div class="info_list">If something change on your account, you can always changes it here.</div>
+                    <a class="red_btn" href="#">Change Company Info</a>
+                </div>
+                <div class="enroll_list">
+                    <div class="info_list">For simple, quick checkout ordering, we store your credit cards an a secure credir card platform.</div>
+                    <a class="red_btn" href="#">Manage Credit Cards</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="logo_div">
+                <a href="#" class="foot-logo"><img src="images/logo.png"></a>
+            </div>
+            <ul>
+                <li>1275 Glory Road</li>
+                <li>Green Bay, WI 54304</li>
+                <li><a href="tel:+19203368983">920.336.8983</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        // grab the initial top offset of the navigation 
+        var stickyNavTop = $('body').offset().top;
+        // our function that decides weather the navigation bar should have "fixed" css position or not.
+        var stickyNav = function() {
+            var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+
+            // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+            // otherwise change it back to relative
+            if (scrollTop > 10) {
+                $('header').addClass('sticky');
+            } else {
+                $('header').removeClass('sticky');
+            }
+
+        };
+
+        stickyNav();
+        // and run it again every time you scroll
+        $(window).scroll(function() {
+            stickyNav();
+        });
+
+    </script>
+    <script>
+        jQuery(function($) {
+
+            //Preloader
+            var preloader = $('.preloader');
+            $(window).load(function() {
+                preloader.remove();
+            });
+        });
+
+    </script>
+    <script>
+        jQuery('.rmm-button').click(function() {
+            jQuery('.nav').toggleClass('text');
+            jQuery('.rmm-button').toggleClass('bt-xlose');
+        });
+
+    </script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery(".user_view").click(function() {
+                jQuery(".view_links").toggle();
+            });
+        });
+
+    </script>
+    <!-----------------------------------Login Modal--------------------------------------------->
+
+    <!-----------------------------------Register Modal--------------------------------------------->
+    <div id="myModalRegister" class="modal fade form_popup" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h2>register a new account</h2>
+                </div>
+                <div class="modal-body">
+                    <div id="result1"></div>
+                    <form role="form" id="wpjobus-register" name="wpjobus-register" action="" method="post">
+                        <div class="form-area">
+                            <div class="form-group">
+                                <!--<label for="exampleInputFirstname">First Name</label>-->
+                                <input type="text" class="form-control" name="userFname" placeholder="Full Name">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputLastName">Username</label>-->
+                                <input type="text" class="form-control" name="userName" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword1">Password</label>--->
+                                <input type="password" class="form-control" name="userPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <!--<label for="exampleInputPassword2">Repeat Password</label>--->
+                                <input type="password" class="form-control" name="userConfirmPassword" placeholder="Retype Password">
+                            </div>
+                            <input type="hidden" name="" value="" /><input type="hidden" name="_wp_http_referer" value="/dev/" /> <button type="submit" name="submit" class="btn btn-primary popup_btn">join now</button>
+                        </div>
+                    </form>
+                    <p>
+                        Already have an account?
+                        <a href="javascript:void(0)" class="btn-primary login_c_register" data-toggle="modal" data-target="#myModallogin">Sign in here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------------------Register Modal--------------------------------------------->
+</body>
+
+</html>
